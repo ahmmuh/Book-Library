@@ -1,0 +1,31 @@
+﻿@page
+@model Book_Library.Pages.BookList.DeleteBookModel
+@{
+}
+
+
+
+<h3>Delete book</h3>
+<br />
+<div class="container row">
+    <div class="col">
+        <form method="post">
+            <input type="hidden" asp-for="Book.Id" />
+            <div class="form-group">
+                <input class="form-control mb-3" disabled value="Book.Title" type="text" asp-for="Book.Title" />
+            
+            </div>
+               <div class="form-group">
+                <input class="form-control mb-3" disabled value="Book.ISBN"  type="text" asp-for="Book.ISBN" />
+              
+            </div>
+               <div class="form-group">
+                <input class="form-control mb-3" disabled value="Book.Author"  type="text" asp-for="Book.Author" />
+                 
+            </div>
+        
+            <a asp-page="Index" class="btn btn-secondary">Go back</a>
+            <button type="submit" asp-page-handler="DeleteBook" onclick="return confirm('Vill du ta bort den?')" asp-route-id="Book.Id" class="btn btn-danger ">Delete</button>
+        </form>
+    </div>
+</div>
